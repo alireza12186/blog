@@ -1,0 +1,83 @@
+---
+layout: default
+---
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+<div class="main-content">
+
+    <article class="module color-3">
+        <h2>{{ page.title }}{{ shortUrl }}</h2>
+        <p id="date" class="date"></p>
+<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished"></time>    
+     
+        {{ content }}
+        <p class="top"><small><a href="#top">[بالا]</a></small></p>
+        
+        <p><b>کلیدواژه‌ها:  </b>  <small>
+    {% for tag in page.tags %}
+    <a href="/tag#{{ tag | slugify }}">&nbsp  {{ tag }}  &nbsp</a>
+            {% endfor %}
+            </small></p>
+
+
+        <script>
+      var date = '{{page.date}}'
+      moment.loadPersian(true);
+      var jalaliDate = moment(date, 'YYYY-M-D HH:mm:ss TZD').format('ddd jD jMMMM jYYYY');
+      document.getElementById("date").innerText = jalaliDate
+  </script>
+
+        </p>        
+    </article>
+<script src="//commenton.ir/api/v1/comment.js"></script>
+<div id="commenton"></div>
+<script>
+    Commenton.init({
+        api: 'elg5MkQySlh3SDh5VHlXMFZLOW4wZUlYVG9YOTB6Q0Q', // را از سایت  کامنتون دریافت کنید API کد
+        link: window.location
+    })
+</script>
+
+    <div class="social module">
+        <ul>
+
+            {% capture url %}{{ site.url }}{{ page.url }}{% endcapture %}
+
+            {% if page.shortUrl != null %}
+                {% assign url = page.shortUrl %}
+            {% endif %}
+
+            {% assign tagStr = '' %}
+            {% for tag in page.tags %}
+                {% capture tagStr %}{{ tagStr }}{{ tag }},{% endcapture %}
+            {% endfor %}
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t={{ page.title }}&u={{ url }}">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ url }}&via={{ site.twitter }}&hashtags={{ tagStr }}">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url={{ url }}">Google+</a></li>
+        </ul>
+    </div>
+
+{% if site.disqus-id %}
+<div class="module color-3">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = '{{ site.disqus-id }}';
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript"> comments.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by<span class="logo-disqus">Disqus</span></a>
+</div>
+{% endif %}
+
+</div>
+
+
+

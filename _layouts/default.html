@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        {% if page.title %} {{ page.title }}
+        {% else %} {{ site.name }} &mdash; {{ site.description }}
+        {% endif %}
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    {% if site.highlighter %} <link rel="stylesheet" href="{{ site.url }}/css/syntax.css" type='text/css'> {% endif %}
+    <link rel="stylesheet" href="{{ site.url }}/css/main.css" type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+
+    <script src="/assets/persiandate/moment.js"></script>
+<script src="/assets/persiandate/moment-jalaali.js"></script>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header id="top" class="main-header">
+
+        <div class="module title color-1">
+            <h1><a href="{{ site.url }}/">{{ site.name }}</a></h1>
+        </div>
+
+        <div class="module description color-2">
+            {{ site.description }}
+        </div>
+
+        <nav class="module main-menu color-4">
+            <a href="{{ site.url }}/">خانه</a>
+            <a href="{{ site.url }}/about/">درباره</a>
+            <a href="{{ site.url }}/contact/">تماس</a>
+        </nav>
+
+        <div class="module links color-3">
+            <a href="https://alirezak.ir/tag" title="کلیدواژه‌های مطالب" target="_blank">کلیدواژه‌ها</a><br/>
+            <a href="https://alirezak.ir/category" title="موضوعات" target="_blank">موضوعات</a><br/>
+            <a href="https://alirezak.ir/posts" title="همه مطالب" target="_blank">همه مطالب</a><br/>
+            <a href="{{ site.url }}/feed.xml" title="Suscribe to RSS" target="_blank">فید</a>
+        </div>
+      
+         <nav class="module main-menu color-4">
+             <span>جستجو</span>
+             <script async src="https://cse.google.com/cse.js?cx=002938393499732553651:9laavew5ziq"></script>
+<div class="gcse-search"></div>
+        </nav>
+        
+
+    </header>
+
+    {{ content }} 
+
+    {% include footer.html %}
+
+</body>
+</html>
