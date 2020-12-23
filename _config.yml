@@ -3,8 +3,10 @@
 #------------------------------------------------------------------------------
 name: علیرضاک
 description: "یک کتابدار که به دنیای کامپیوتر علاقمند است و از علایقش در مورد لینوکس و اینترنت و دنیای نرم‌افزارهای آزاد می‌نویسد"
-url: http://localhost:4000
+production_url: http://alireza12186.github.io/blog
 baseurl: 'blog'
+BASE_PATH : https://alirezak.ir/blog
+
 
 #------------------------------------------------------------------------------
 # Markdown processor and code highlighting
@@ -48,4 +50,3 @@ gems: ['jekyll-paginate']
 sass:
     style: :compressed
     sass_dir: assets/css/
-
