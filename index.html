@@ -3,15 +3,15 @@ layout: default
 ---
 
 <section class="main-content">
-
+{% unless post.categories contains 'خاطرات' %}
     {% for post in paginator.posts %}
         <article class="module color-3">
-                {% unless post.categories contains 'خاطرات' %}<h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
                 <span class="category">موضوع:  {{ post.categories | join: ' ، ' }} </span>
-                <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>{% endunless %}
+                <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
         </article>
     {% endfor %}
-
+{% endunless %}
     <div class="module pagination color-3">
         {% if paginator.previous_page %}
             <a href="{{ site.url }}{{ paginator.previous_page_path }}" class="previous">قبلی</a>
