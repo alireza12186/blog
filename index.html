@@ -6,7 +6,7 @@ layout: default
 
     {% for post in paginator.posts %}
         <article class="module color-3">
-                <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                {% unless post.categories contains 'TIL' %}<h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>{% endunless %}
                 <span class="category">موضوع:  {{ post.categories | join: ' ، ' }} </span>
                 <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
         </article>
