@@ -1,20 +1,11 @@
 #------------------------------------------------------------------------------
 # General
 #------------------------------------------------------------------------------
-#name: علیرضاک
-#description: "یک کتابدار که به دنیای کامپیوتر علاقمند است و از علایقش در مورد لینوکس و اینترنت و دنیای نرم‌افزارهای آزاد می‌نویسد"
-#production_url: http://alireza12186.github.io/blog
-#baseurl: 'blog'
-#BASE_PATH : https://alirezak.ir/blog
-
 name: علیرضاک
 description: "یک کتابدار که به دنیای کامپیوتر علاقمند است و از علایقش در مورد لینوکس و اینترنت و دنیای نرم‌افزارهای آزاد می‌نویسد"
-production_url: https://alireza12186.github.io/blog
-#baseurl: 'blog'
+production_url: http://alireza12186.github.io/blog
+baseurl: 'blog'
 BASE_PATH : https://alirezak.ir/blog
-baseurl: "/blog"
-#production_url : http://<username>.github.io.com/blog
-#BASE_PATH : http://<username>.com/blog
 
 #------------------------------------------------------------------------------
 # Markdown processor and code highlighting
