@@ -2,6 +2,7 @@
 layout: post
 title:  "اوپن سوزه عزیز من!"
 date:   2020-12-26 09:37:00
+comments: true
 categories: [لینوکس]
 description: در این مطلب در مورد توزیع اوپن سوزه کمی حرف می زنیم
 tags: [ اوپن سوزه, لینوکس, opensuse ]
